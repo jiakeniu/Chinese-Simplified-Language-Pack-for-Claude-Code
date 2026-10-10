@@ -1,0 +1,5 @@
+.vscode/**
+.vscodeignore
+.gitignore
+**/*.map
+**/.DS_Store
