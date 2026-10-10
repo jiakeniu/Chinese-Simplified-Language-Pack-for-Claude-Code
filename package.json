@@ -1,0 +1,242 @@
+{
+	"name": "claude-code-zh-simplified",
+	"displayName": "Chinese (Simplified) (简体中文) Language Pack for Claude Code",
+	"description": "为 Claude Code for VS Code 提供简体中文界面",
+	"version": "1.0.0",
+	"publisher": "local",
+	"license": "MIT",
+	"icon": "logo.png",
+	"repository": {
+		"type": "git",
+		"url": "https://example.com/claude-code-zh-simplified.git"
+	},
+	"bugs": {
+		"url": "https://example.com/claude-code-zh-simplified/issues"
+	},
+	"homepage": "https://example.com/claude-code-zh-simplified#readme",
+	"engines": {
+		"vscode": "^1.94.0"
+	},
+	"categories": [
+		"Language Packs",
+		"AI",
+		"Chat",
+		"Other"
+	],
+	"keywords": [
+		"claude",
+		"claude code",
+		"chinese",
+		"simplified chinese",
+		"language pack",
+		"localization",
+		"i18n",
+		"zh-CN",
+		"中文",
+		"简体中文",
+		"简体",
+		"汉化",
+		"中文界面"
+	],
+	"activationEvents": [
+		"onStartupFinished"
+	],
+	"main": "./extension.js",
+	"contributes": {
+		"commands": [
+			{
+				"command": "claudeCodeZh.showMenu",
+				"title": "%cmd.showMenu%",
+				"category": "Claude Code 中文化"
+			},
+			{
+				"command": "claudeCodeZh.applyTranslation",
+				"title": "%cmd.applyTranslation%",
+				"category": "Claude Code 中文化"
+			},
+			{
+				"command": "claudeCodeZh.reloadTranslation",
+				"title": "%cmd.reloadTranslation%",
+				"category": "Claude Code 中文化"
+			},
+			{
+				"command": "claudeCodeZh.reloadClaudeUi",
+				"title": "%cmd.reloadClaudeUi%",
+				"category": "Claude Code 中文化",
+				"icon": "$(globe)",
+				"shortTitle": "%cmd.reloadClaudeUi.short%"
+			},
+			{
+				"command": "claudeCodeZh.restoreOriginal",
+				"title": "%cmd.restoreOriginal%",
+				"category": "Claude Code 中文化"
+			},
+			{
+				"command": "claudeCodeZh.scanUntranslated",
+				"title": "%cmd.scanUntranslated%",
+				"category": "Claude Code 中文化"
+			},
+			{
+				"command": "claudeCodeZh.viewUntranslatedList",
+				"title": "%cmd.viewUntranslatedList%",
+				"category": "Claude Code 中文化"
+			},
+			{
+				"command": "claudeCodeZh.gotoUntranslated",
+				"title": "%cmd.gotoUntranslated%",
+				"category": "Claude Code 中文化"
+			},
+			{
+				"command": "claudeCodeZh.openCommandPalette",
+				"title": "%cmd.openCommandPalette%",
+				"category": "Claude Code 中文化"
+			},
+			{
+				"command": "claudeCodeZh.openConfig",
+				"title": "%cmd.openConfig%",
+				"category": "Claude Code 中文化"
+			},
+			{
+				"command": "claudeCodeZh.showStatus",
+				"title": "%cmd.showStatus%",
+				"category": "Claude Code 中文化"
+			},
+			{
+				"command": "claudeCodeZh.reloadWindow",
+				"title": "%cmd.reloadWindow%",
+				"category": "Claude Code 中文化"
+			}
+		],
+		"menus": {
+			"view/title": [
+				{
+					"command": "claudeCodeZh.reloadClaudeUi",
+					"when": "view == claudeVSCodeSidebar || view == claudeVSCodeSidebarSecondary || view == claudeVSCodeSessionsList",
+					"group": "navigation@99"
+				}
+			],
+			"editor/title": [
+				{
+					"command": "claudeCodeZh.reloadClaudeUi",
+					"when": "activeWebviewPanelId == claudeVSCodePanel",
+					"group": "navigation@99"
+				}
+			]
+		},
+		"configuration": {
+			"title": "Claude Code 中文化",
+			"properties": {
+				"claudeCodeZh.autoApplyOnStartup": {
+					"type": "boolean",
+					"default": true,
+					"description": "%cfg.autoApplyOnStartup%"
+				},
+				"claudeCodeZh.autoApplyOnUpdate": {
+					"type": "boolean",
+					"default": true,
+					"description": "%cfg.autoApplyOnUpdate%"
+				},
+				"claudeCodeZh.autoReloadClaudeUi": {
+					"type": "boolean",
+					"default": false,
+					"description": "%cfg.autoReloadClaudeUi%"
+				},
+				"claudeCodeZh.showStatusBar": {
+					"type": "boolean",
+					"default": true,
+					"description": "%cfg.showStatusBar%"
+				},
+				"claudeCodeZh.createBackup": {
+					"type": "boolean",
+					"default": true,
+					"description": "%cfg.createBackup%"
+				},
+				"claudeCodeZh.showNotifications": {
+					"type": "boolean",
+					"default": true,
+					"description": "%cfg.showNotifications%"
+				},
+				"claudeCodeZh.claudeCodeExtensionId": {
+					"type": "string",
+					"default": "Anthropic.claude-code",
+					"description": "%cfg.claudeCodeExtensionId%"
+				},
+				"claudeCodeZh.scanOnUpdate": {
+					"type": "boolean",
+					"default": false,
+					"description": "%cfg.scanOnUpdate%"
+				},
+				"claudeCodeZh.preTranslationRules": {
+					"type": "array",
+					"default": [],
+					"description": "%cfg.preTranslationRules%",
+					"items": {
+						"type": "object",
+						"properties": {
+							"original": {
+								"type": "string",
+								"description": "%cfg.rules.original%"
+							},
+							"chinese": {
+								"type": "string",
+								"description": "%cfg.rules.chinese%"
+							},
+							"regex": {
+								"type": "boolean",
+								"default": false,
+								"description": "%cfg.rules.regex%"
+							},
+							"flags": {
+								"type": "string",
+								"default": "g",
+								"description": "%cfg.rules.flags%"
+							}
+						},
+						"required": [
+							"original",
+							"chinese"
+						]
+					}
+				},
+				"claudeCodeZh.postTranslationRules": {
+					"type": "array",
+					"default": [],
+					"description": "%cfg.postTranslationRules%",
+					"items": {
+						"type": "object",
+						"properties": {
+							"original": {
+								"type": "string",
+								"description": "%cfg.rules.original%"
+							},
+							"chinese": {
+								"type": "string",
+								"description": "%cfg.rules.chinese%"
+							},
+							"regex": {
+								"type": "boolean",
+								"default": false,
+								"description": "%cfg.rules.regex%"
+							},
+							"flags": {
+								"type": "string",
+								"default": "g",
+								"description": "%cfg.rules.flags%"
+							}
+						},
+						"required": [
+							"original",
+							"chinese"
+						]
+					}
+				}
+			}
+		}
+	},
+	"scripts": {
+		"package": "vsce package --no-dependencies"
+	},
+	"devDependencies": {
+		"@vscode/vsce": "^3.7.1"
+	}
+}
