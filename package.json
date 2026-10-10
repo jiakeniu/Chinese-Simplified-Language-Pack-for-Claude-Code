@@ -3,17 +3,17 @@
 	"displayName": "Chinese (Simplified) (简体中文) Language Pack for Claude Code",
 	"description": "为 Claude Code for VS Code 提供简体中文界面",
 	"version": "1.0.0",
-	"publisher": "local",
+	"publisher": "JiakeNiu",
 	"license": "MIT",
 	"icon": "logo.png",
 	"repository": {
 		"type": "git",
-		"url": "https://example.com/claude-code-zh-simplified.git"
+		"url": "https://github.com/jiakeniu/Chinese-Simplified-Language-Pack-for-Claude-Code.git"
 	},
 	"bugs": {
-		"url": "https://example.com/claude-code-zh-simplified/issues"
+		"url": "https://github.com/jiakeniu/Chinese-Simplified-Language-Pack-for-Claude-Code/issues"
 	},
-	"homepage": "https://example.com/claude-code-zh-simplified#readme",
+	"homepage": "https://github.com/jiakeniu/Chinese-Simplified-Language-Pack-for-Claude-Code#readme",
 	"engines": {
 		"vscode": "^1.94.0"
 	},

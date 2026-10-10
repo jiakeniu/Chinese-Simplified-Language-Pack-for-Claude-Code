@@ -14,7 +14,7 @@ const KEY_DEAD_RULES = 'deadRules';        // 上次掃描時已對不上的規�
 const KEY_SEEN_UNTRANSLATED = 'seenUntranslated'; // 上次掃描時已知的漏翻字串（同樣只回報「新增的」）
 
 // 本擴充功能自身的 id（= package.json 的 publisher.name）；改名時兩處必須同步
-const OWN_EXTENSION_ID = 'local.claude-code-zh-simplified';
+const OWN_EXTENSION_ID = 'JiakeNiu.claude-code-zh-simplified';
 
 // 偵測未翻譯字串時要掃描的介面屬性（比對「prop:值」）
 // children 於 2.3.0 納入：側邊提問面板整區文案都寫成 children:"文字"，舊版掃描一條都看不到。
